@@ -1,6 +1,3 @@
----
-geometry: margin=2cm
----
 # [Paradigmas de Programação 2020/2021](https://elearning.ual.pt/course/view.php?id=1946), [UAL](https://autonoma.pt/)
 
 ## Laboratório 7: Prolog
