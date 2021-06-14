@@ -50,3 +50,34 @@ match(green_bay_packers,new_orleans_saints,20210912,2125).
 match(denver_broncos,new_york_giants,20210912,2125).
 match(chicago_bears,los_angeles_rams,20210912,120).
 match(baltimore_ravens,las_vegas_raiders,20210913,115).
+
+% a) `where(Visitor, Host, Stadium)` que encontra o est�dio (`Stadium`)
+% onde o encontro entre `Visitor` (joga fora) e `Host` (joga em casa) ir�
+% decorrer.
+
+where(Visitor, Host, Stadium) :-
+    match(Visitor, Host, _, _),
+    team(_, _, Host, Stadium).
+
+
+% b) `stadiums_open(Date, Stadium)` que encontra os est�dios com
+% encontros na data indicada.
+
+stadiums_open(Date, Stadium) :-
+    match(_, Host, Date, _),
+    team(_, _, Host, Stadium).
+
+% c) `conf_stadiums_open(Conf, Date, Stadium)` que encontra est�dios cuja
+% equipa a jogar em casa � da confer�ncia `Conf`.
+
+conf_stadiums_open(Conf, Date, Stadium) :-
+    stadiums_open(Date, Stadium),
+    team(Conf, _, _, Stadium).
+
+% d) `cross_conf_stadiums(Stadium)` que encontra est�dios que s�o a casa
+% de equipas das duas confer�ncias (*afc* e *nfc*).
+
+cross_conf_stadiums(Stadium) :-
+    team(C1,_,_,Stadium),
+    team(C2,_,_,Stadium),
+    C1 \= C2.
