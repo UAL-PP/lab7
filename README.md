@@ -27,6 +27,8 @@ Durante a sessão, a instrução `trace.` permite observar o comportamento de *b
 
 A construção de código pode ser facilitada recorrendo ao Visual Studio Code, com a extensão [VSC-Prolog](https://marketplace.visualstudio.com/items?itemName=arthurwang.vsc-prolog).
 
+É necessário definir `"prolog.executablePath": "C:\\Program Files\\swipl\\bin\\swipl.exe",` nas *settings* do VS Code.
+
 - `alt-x l`: Iniciar um interpretador, consultando o ficheiro atual;
 - `ctrl-ç`: Foca o terminal;
 - `ctrl-1`: Foca o editor.
