@@ -50,3 +50,39 @@ match(green_bay_packers,new_orleans_saints,20210912,2125).
 match(denver_broncos,new_york_giants,20210912,2125).
 match(chicago_bears,los_angeles_rams,20210912,120).
 match(baltimore_ravens,las_vegas_raiders,20210913,115).
+
+% Código aka Predicados
+
+% a) `where(Visitor, Host, Stadium)` que encontra o estádio (`Stadium`) onde o encontro entre `Visitor` (joga fora) e `Host` (joga em casa) irá decorrer.
+
+where(Visitor, Host, Stadium) :-
+    match(Visitor, Host, _, _),
+    team(_, _, Host, Stadium).
+
+% b) `stadiums_open(Date, Stadium)` que encontra os estádios com encontros na data indicada.
+
+stadiums_open(Date, Stadium) :-
+    match(_, Host, Date, _),
+    team(_, _, Host, Stadium).
+
+% c) `conf_stadiums_open(Conf, Date, Stadium)` que encontra estádios cuja equipa a jogar em casa é da conferência `Conf`.
+
+conf_stadiums_open(Conf, Date, Stadium) :-
+    stadiums_open(Date, Stadium),
+    team(Conf, _, _, Stadium).
+
+% d) `cross_conf_stadiums(Stadium)` que encontra estádios que são a casa de equipas das duas conferências (*afc* e *nfc*).
+
+%cross_conf_stadiums(Stadium) :-
+%    team(afc, _, _, Stadium),
+%    team(nfc, _, _, Stadium).
+
+cross_conf_stadiums(Stadium) :-
+    team(X, _, T1, Stadium),
+    team(Y, _, T2, Stadium),
+    X \= Y,
+    format("~w vs. ~w~n", [T1, T2]).
+
+
+
+
