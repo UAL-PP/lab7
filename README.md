@@ -11,11 +11,9 @@ Este laboratório apresenta um conjunto de exercícios a resolver com Prolog (`S
 
 ### Contexto
 
-Prolog é uma implementação do paradigma de programação lógica. 
+Prolog é uma implementação do paradigma de programação lógica.
 
-A linguagem permite declarar asserções sobre uma determinada base de conhecimento, que implicitamente define uma árvore. Prolog permite interrogar essa árvore com expressões que têm ou não uma solução (i.e., um conjunto de fatos que determinam que a 
-expressão é verdadeira), implementando um algoritmo de *backtracking*, que efetua um percurso infixo na árvore à procura de 
-soluções, eventualmente sujeito a restrições.
+A linguagem permite declarar asserções sobre uma determinada base de conhecimento, que implicitamente define uma árvore. Prolog permite interrogar essa árvore com expressões que têm ou não uma solução (i.e., um conjunto de fatos que determinam que a expressão é verdadeira), implementando um algoritmo de *backtracking*, que efetua um percurso infixo na árvore à procura de soluções, eventualmente sujeito a restrições.
 
 Após a instalação, o SWI Prolog inclui, um interpretador/compilador e debugger, um conjunto de bibliotecas, e um editor de texto.
 
@@ -66,9 +64,9 @@ c) Construa um predicado `fibo(N, X)` que encontra o valor `X`, ordem `N`, na se
 a) Construa um predicado `in_list(N, L)` que determina se um número `N` 
 faz parte da lista `L`.
 
-b) Construma um predicado `add_list(L, X)` que unifica em `X` a soma de todos os valores em `L`.
+b) Construa um predicado `add_list(L, X)` que unifica em `X` a soma de todos os valores em `L`.
 
-b) Construa um predicado `number_list(N, L)` que unifica uma lista de números inteiros entre `0` e `N`.
+c) Construa um predicado `number_list(N, L)` que unifica uma lista de números inteiros entre `0` e `N`.
 
 ## Tarefa 4
 
@@ -104,4 +102,4 @@ load_data :-
 
 a) Após importação dinâmica de fatos, construa um predicado `wcode(Code)` que, recorrendo a `write`, *imprime no terminal* descrição do código `Code`.
 
-b) Construa um novo predicato `fcode(Code)` que, recorrendo a `format`, mostra o tipo, código, e descrição do código `Code`.
+b) Construa um novo predicado `fcode(Code)` que, recorrendo a `format`, mostra o tipo, código, e descrição do código `Code`.
